@@ -1,0 +1,15 @@
+﻿@model Incident
+@{
+    ViewData["Title"] = "Delete Incident";
+}
+
+<h1>Confirm Deletion</h1>
+<h2>@Model.IncidentID - @Model.Title</h2>
+
+<!-- Razor page to display a delete confirmation page-->
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="IncidentID" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-controller="Incident" asp-action="List" class="btn btn-dark">Cancel</a>
+
+</form>
